@@ -12,6 +12,10 @@ const MONGO_URI = process.env.MONGO_URI;
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res)=>{
+    res.send("Backend is Live")
+})
+
 // mount routes
 app.use('/', authRoutes);
 
