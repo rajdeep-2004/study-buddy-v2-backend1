@@ -4,6 +4,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
+const groupRoutes = require('./routes/groups');
+const todoRoutes = require('./routes/todos');
+const sessionRoutes = require('./routes/sessions');
+const resourceRoutes = require('./routes/resources');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,7 +21,11 @@ app.get('/', (req, res)=>{
 })
 
 // mount routes
-app.use('/', authRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/groups', groupRoutes);
+app.use('/api/todos', todoRoutes);
+app.use('/api/sessions', sessionRoutes);
+app.use('/api/resources', resourceRoutes);
 
 (async function start() {
   try {
