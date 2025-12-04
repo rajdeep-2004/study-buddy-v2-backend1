@@ -8,6 +8,12 @@ const groupSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+  username: {
+    type: String,
+  },
+  imageURL: {
+    type: String,
+  },
   password: {
     type: String,
     required: true,
